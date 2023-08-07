@@ -23,8 +23,9 @@ const locations = (city) => {
 			wind_speed.innerHTML = response.wind_speed
 			wind_speed2.innerHTML = response.wind_speed
 			wind_degrees.innerHTML = response.wind_degrees
-			sunrise.innerHTML = response.sunrise
-			sunset.innerHTML = response.sunset
+			sunrise.innerHTML = new Date(response.sunrise *1000).toLocaleTimeString()
+			sunset.innerHTML =   new Date(response.sunset *1000).toLocaleTimeString()
+			
 			console.log(response)
 		})
 		.catch(err => console.error(err))
